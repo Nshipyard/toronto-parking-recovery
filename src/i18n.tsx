@@ -10,7 +10,7 @@ const en = {
     line: "An open-source civic project by Nshipyard. Not affiliated with the Government of Canada or the City of Toronto.",
     badge: "Open source",
   },
-  nav: { explorer: "Recovery map", results: "Results", developers: "Developers", data: "Data", back: "All projects" },
+  nav: { explorer: "Recovery map", results: "Results", developers: "Developers", data: "Data", charts: "Charts", back: "All projects" },
   hero: {
     kicker: "Nshipyard Canada · Parking recovery",
     title: "Toronto parking recovery times by ward",
@@ -84,6 +84,47 @@ const en = {
     body: "The full computed dataset: one row per storm per area, with the baseline, the recovery time, and a flag for areas that could not be scored. MIT licensed.",
     download: "Download",
   },
+  charts: {
+    kicker: "Charts",
+    title: "Toronto parking recovery in four charts",
+    intro:
+      "Every chart on this page is drawn from this project's own computed dataset (data/recovery.json): recovery days for all 25 wards across the nine major storms, and the citywide daily ticket counts for February 2025. A recovery time is an inference from ticket counts: the days from the end of a storm until daily counts held at or above 90 percent of the normal level for that weekday, two days in a row.",
+    c1title: "Days to recover, by ward, February 2025",
+    c1takeaway:
+      "Half the wards were back within 7 days, but Scarborough Centre took 29 days, which is 29 times as long as Beaches-East York at 1 day.",
+    c1source:
+      "Source and method: data/recovery.json, the ward rows for the storm of February 12-16, 2025. All 25 wards scored. Bars are sorted from slowest to fastest, and each bar is labelled with its recovery days.",
+    fastest: "fastest",
+    slowest: "slowest",
+    daysUnit: "days",
+    c2title: "Toronto parking tickets per day through the February 2025 storm",
+    c2takeaway:
+      "Citywide ticket counts fell to about half of their normal level during the storm, with the lowest day at 1,437 tickets on February 16, and counts held at or above 90 percent of normal only from February 23 on.",
+    c2source:
+      "Source and method: data/recovery.json, the citywide daily series for February 1-28, 2025. The dashed line is the project's normal level: the ticket count expected for that weekday, from the 14 days before the storm. The shaded band is the storm window, February 12-16.",
+    ticketsPerDay: "Tickets per day",
+    normalLevel: "Normal level for that weekday",
+    ticketsWritten: "Tickets written",
+    stormWindow: "Storm window, Feb 12-16",
+    c3title: "Recovery days by ward and storm",
+    c3takeaway:
+      "Most wards recovered within a week of most storms. The exceptions cluster in February 2025 and in the storm of December 23-26, 2025, where 13 of the 25 wards were still below normal when the ticket data ends on December 31, 2025.",
+    c3source:
+      "Source and method: data/recovery.json, all 225 ward and storm rows. Dark hatched cells marked 30+ never reached 90 percent of normal within the 30-day search window. Grey dotted cells marked * were still below normal when the ticket record ends on December 31, 2025. Plain grey cells wrote too few tickets in normal times to score.",
+    legendFast: "Back in 1-3 days",
+    legendMid: "4-7 days",
+    legendSlow: "8-14 days",
+    legendSlowest: "15-30 days",
+    legendNotBack: "Not back within 30 days (30+)",
+    legendDataEnd: "Still below normal when the data ends, Dec 31, 2025 (*)",
+    legendUnscored: "Too few tickets to score",
+    c4title: "Median recovery days for each storm",
+    c4takeaway:
+      "February 2025 stands apart: its median ward took 7 days, while the median ward for every other storm was back in 2 to 4 days.",
+    c4source:
+      "Source and method: data/recovery.json. Each bar is the median recovery days across the wards that recovered in that storm. The December 23-26, 2025 bar covers only the 12 wards that recovered before the data ends; the other 13 had not recovered by December 31, 2025.",
+    medianDays: "Median recovery days",
+  },
   methodology: {
     kicker: "Methodology",
     title: "How each recovery time was computed.",
@@ -131,7 +172,7 @@ const fr: Dict = {
     line: "Un projet civique à code source ouvert par Nshipyard. Sans affiliation avec le gouvernement du Canada ni la Ville de Toronto.",
     badge: "Code source ouvert",
   },
-  nav: { explorer: "Carte de reprise", results: "Résultats", developers: "Développeurs", data: "Données", back: "Tous les projets" },
+  nav: { explorer: "Carte de reprise", results: "Résultats", developers: "Développeurs", data: "Données", charts: "Graphiques", back: "Tous les projets" },
   hero: {
     kicker: "Nshipyard Canada · Reprise du stationnement",
     title: "Délais de rétablissement du stationnement à Toronto, par arrondissement",
@@ -204,6 +245,47 @@ const fr: Dict = {
     title: "Prenez les fichiers.",
     body: "Le jeu de données complet calculé : une ligne par tempête et par secteur, avec la normale, le temps de reprise et un indicateur pour les secteurs qui n'ont pas pu être notés. Licence MIT.",
     download: "Télécharger",
+  },
+  charts: {
+    kicker: "Graphiques",
+    title: "Le rétablissement du stationnement à Toronto en quatre graphiques",
+    intro:
+      "Chaque graphique de cette page est tiré du jeu de données calculé par ce projet (data/recovery.json) : les jours de rétablissement des 25 arrondissements pour les neuf tempêtes majeures, et les comptes quotidiens de contraventions à l'échelle de la ville pour février 2025. Un temps de reprise est une inférence à partir des contraventions : le nombre de jours entre la fin d'une tempête et le moment où les comptes quotidiens ont tenu à au moins 90 pour cent du niveau normal pour ce jour de semaine, deux jours de suite.",
+    c1title: "Jours pour se rétablir, par arrondissement, février 2025",
+    c1takeaway:
+      "La moitié des arrondissements étaient revenus à la normale sous 7 jours, mais Scarborough Centre a pris 29 jours, soit 29 fois plus longtemps que Beaches-East York, à 1 jour.",
+    c1source:
+      "Source et méthode : data/recovery.json, les lignes par arrondissement pour la tempête du 12 au 16 février 2025. Les 25 arrondissements ont été notés. Les barres vont du plus lent au plus rapide, et chaque barre indique ses jours de rétablissement.",
+    fastest: "le plus rapide",
+    slowest: "le plus lent",
+    daysUnit: "jours",
+    c2title: "Contraventions de stationnement par jour à Toronto pendant la tempête de février 2025",
+    c2takeaway:
+      "Les contraventions à l'échelle de la ville sont tombées à environ la moitié de leur niveau normal pendant la tempête, avec un creux de 1 437 contraventions le 16 février, et les comptes n'ont tenu à au moins 90 pour cent de la normale qu'à partir du 23 février.",
+    c2source:
+      "Source et méthode : data/recovery.json, la série quotidienne à l'échelle de la ville du 1er au 28 février 2025. La ligne pointillée est le niveau normal du projet : le compte attendu pour ce jour de semaine, d'après les 14 jours précédant la tempête. La bande ombrée est la fenêtre de la tempête, du 12 au 16 février.",
+    ticketsPerDay: "Contraventions par jour",
+    normalLevel: "Niveau normal pour ce jour de semaine",
+    ticketsWritten: "Contraventions émises",
+    stormWindow: "Fenêtre de la tempête, 12 au 16 févr.",
+    c3title: "Jours de rétablissement par arrondissement et par tempête",
+    c3takeaway:
+      "La plupart des arrondissements se sont rétablis en moins d'une semaine après la plupart des tempêtes. Les exceptions se concentrent en février 2025 et dans la tempête du 23 au 26 décembre 2025, où 13 des 25 arrondissements étaient encore sous la normale quand les données se terminent, le 31 décembre 2025.",
+    c3source:
+      "Source et méthode : data/recovery.json, les 225 lignes d'arrondissements et de tempêtes. Les cellules hachurées foncées marquées 30+ n'ont jamais atteint 90 pour cent de la normale dans la fenêtre de recherche de 30 jours. Les cellules grises pointillées marquées * étaient encore sous la normale quand le registre des contraventions se termine, le 31 décembre 2025. Les cellules grises unies recevaient trop peu de contraventions en temps normal pour être notées.",
+    legendFast: "Retour en 1 à 3 jours",
+    legendMid: "4 à 7 jours",
+    legendSlow: "8 à 14 jours",
+    legendSlowest: "15 à 30 jours",
+    legendNotBack: "Pas de retour sous 30 jours (30+)",
+    legendDataEnd: "Encore sous la normale à la fin des données, 31 déc. 2025 (*)",
+    legendUnscored: "Trop peu de contraventions pour être noté",
+    c4title: "Jours médians de rétablissement pour chaque tempête",
+    c4takeaway:
+      "Février 2025 se démarque : son arrondissement médian a pris 7 jours, alors que l'arrondissement médian de chaque autre tempête était de retour en 2 à 4 jours.",
+    c4source:
+      "Source et méthode : data/recovery.json. Chaque barre est la médiane des jours de rétablissement parmi les arrondissements rétablis pour cette tempête. La barre du 23 au 26 décembre 2025 ne couvre que les 12 arrondissements rétablis avant la fin des données; les 13 autres ne s'étaient pas rétablis au 31 décembre 2025.",
+    medianDays: "Jours médians de rétablissement",
   },
   methodology: {
     kicker: "Méthodologie",
