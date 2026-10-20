@@ -1,0 +1,9 @@
+{
+  "total_tickets": 6454695,
+  "geocoded_tickets": 5606483,
+  "match_rate": 0.8686,
+  "unmatched_no_house_number": 454177,
+  "unmatched_no_address_match": 394034,
+  "ward_date_cells": 27398,
+  "hood_date_cells": 164799
+}

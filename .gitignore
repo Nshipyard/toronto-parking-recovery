@@ -1,0 +1,6 @@
+node_modules/
+.next/
+.venv/
+data/geo_cache.json
+worklog/
+tsconfig.tsbuildinfo
